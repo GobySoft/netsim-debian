@@ -19,8 +19,8 @@ else
 ifeq ($(shell (dpkg-architecture -qDEB_BUILD_ARCH | egrep -q "amd64|i386") && echo "yes"),yes)
 	DEB_CMAKE_EXTRA_FLAGS += -Dexport_goby_interfaces=ON
         # for running tests
-	DEB_MAKE_ENVVARS += LD_LIBRARY_PATH=$(CURDIR)/lib
-	DEB_MAKE_CHECK_TARGET = test
+        # DEB_MAKE_ENVVARS += LD_LIBRARY_PATH=$(CURDIR)/lib
+	# DEB_MAKE_CHECK_TARGET = test
 endif
 endif
 

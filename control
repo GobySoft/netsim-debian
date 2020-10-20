@@ -8,7 +8,8 @@ Build-Depends: cdbs (>= 0.4.130~),
                libgoby3-dev,
                libgoby3-moos-dev,
                libgoby3-gui-dev,
-               goby3-clang-tool
+               goby3-clang-tool,
+               libjack-jackd2-dev
 Standards-Version: 3.9.6
 Section: libs
 Homepage: https://github.com/GobySoft/netsim
@@ -20,9 +21,11 @@ Multi-Arch: same
 Depends: libnetsim (= ${binary:Version}),
          libgoby3-dev,
          libgoby3-moos-dev,
-         libgoby3-gui-dev
+         libgoby3-gui-dev,
+         libjack-jackd2-dev
 Recommends: acousticstoolbox,
-            goby3-interfaces
+            goby3-interfaces,
+            jackd2
 Description: Developers' package for the NETSIM Project
  NETSIM provides binaries and libraries for underwater acoustic network simulation.
 
