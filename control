@@ -8,7 +8,7 @@ Build-Depends: cdbs (>= 0.4.130~),
                libgoby3-dev,
                libgoby3-moos-dev,
                libgoby3-gui-dev,
-               goby3-clang-tool,
+               goby3-clang-tool [amd64],
                libjack-jackd2-dev
 Standards-Version: 3.9.6
 Section: libs
