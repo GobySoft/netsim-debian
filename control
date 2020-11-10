@@ -44,12 +44,12 @@ Architecture: any
 Description: Applications for the NETSIM Project
  NETSIM provides binaries and libraries for underwater acoustic network simulation.
 
-# Package: netsim-doc
-# Depends: ${shlibs:Depends}, ${misc:Depends}
-# Section: doc
-# Architecture: all
-# Description: Documentation for the NETSIM Project
-#   NETSIM provides binaries and libraries for underwater acoustic network simulation.
+Package: netsim-doc
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Section: doc
+Architecture: all
+Description: Documentation for the NETSIM Project
+ NETSIM provides binaries and libraries for underwater acoustic network simulation.
 
 Package: netsim-interfaces
 Depends: ${shlibs:Depends}, ${misc:Depends}
