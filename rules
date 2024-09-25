@@ -28,5 +28,3 @@ $(info $$DEB_BUILD_ARCH is [${DEB_BUILD_ARCH}])
 $(info $$DEB_TARGET_ARCH is [${DEB_TARGET_ARCH}])
 $(info $$DEB_CMAKE_EXTRA_FLAGS is [${DEB_CMAKE_EXTRA_FLAGS}])
 
-CC=/usr/bin/clang 
-CXX=/usr/bin/clang++
