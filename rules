@@ -1,12 +1,8 @@
 #!/usr/bin/make -f
 
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/cmake.mk
-
-DEB_MAKE_ENVVARS = CTEST_OUTPUT_ON_FAILURE=ON
-
-DEB_BUILD_PARALLEL = true
-DEB_CMAKE_EXTRA_FLAGS =
+export CTEST_OUTPUT_ON_FAILURE=ON
+export DEB_BUILD_PARALLEL = 1
+DEB_CMAKE_EXTRA_FLAGS :=
 
 DEB_BUILD_ARCH ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH)
 DEB_TARGET_ARCH ?= $(shell dpkg-architecture -qDEB_TARGET_ARCH)
@@ -29,5 +25,11 @@ $(info $$DEB_TARGET_ARCH is [${DEB_TARGET_ARCH}])
 $(info $$DEB_CMAKE_EXTRA_FLAGS is [${DEB_CMAKE_EXTRA_FLAGS}])
 
 
-CC=$(DEB_HOST_GNU_TYPE)-gcc
-CXX=$(DEB_HOST_GNU_TYPE)-g++
+export CC := $(DEB_HOST_GNU_TYPE)-gcc
+export CXX := $(DEB_HOST_GNU_TYPE)-g++
+
+%:
+	dh $@ --buildsystem=cmake
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(DEB_CMAKE_EXTRA_FLAGS)
